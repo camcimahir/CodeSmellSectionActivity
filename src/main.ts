@@ -4,7 +4,9 @@
 let counter = 0;
 
 // These constants are for button IDs and heading text
-const incrementButtonID = "increment", counterID = "counter", headerText = "CMPM 121 Project";
+const incrementButtonID = "increment",
+  counterID = "counter",
+  headerText = "CMPM 121 Project";
 
 function setup() {
   // Create the HTML for the counter
@@ -26,7 +28,9 @@ function setup() {
   const counterDisplay = document.getElementById(counterID);
 
   // Check if any element is missing, then exit the function
-  if (!incrementButton || !decrementButton || !resetButton || !counterDisplay) return;
+  if (!incrementButton || !decrementButton || !resetButton || !counterDisplay) {
+    return;
+  }
 
   // Add click event to the increment button
   incrementButton.addEventListener("click", () => {
@@ -46,18 +50,18 @@ function setup() {
   resetButton.addEventListener("click", () => {
     // Reset the counter to 0
     counter = 0;
-    
+
     updateDisplay(counterDisplay);
   });
 }
 
 function updateDisplay(counterDisplay: HTMLElement) {
-    // Update the counter display
-    counterDisplay.innerHTML = `${counter}`;
-    // Update the document title
-    document.title = "Clicked " + counter;
-    // Change the background color based on even/odd count
-    document.body.style.backgroundColor = counter % 2 ? "pink" : "lightblue";
+  // Update the counter display
+  counterDisplay.innerHTML = `${counter}`;
+  // Update the document title
+  document.title = "Clicked " + counter;
+  // Change the background color based on even/odd count
+  document.body.style.backgroundColor = counter % 2 ? "pink" : "lightblue";
 }
 
 function start() {
